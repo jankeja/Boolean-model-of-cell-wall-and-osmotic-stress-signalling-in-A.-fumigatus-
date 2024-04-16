@@ -1,0 +1,151 @@
+##CELL wall stress
+nodes:
+- WSCs #WSC1 and WSC3 receptors
+- Rom2 #GEF for Rho1 (CWI)
+- Rho1 #GTPase (CWI)
+- PkcA
+- Bck1 #MAPKKK in CWI pathway 
+- Mkk2 #MAPKK in CWI pathway
+- MpkA #MAPK in CWI patwhay 
+- RlmA
+- Bem2
+- Sac7
+- MidA
+- cchA
+- shoAg
+- fks1 #1,3-β-glucan synthase catalytic subunit 
+- calmodulin
+- calcineurin
+- crzA
+- zipD
+- cmdAg # gene encoding calmodulin is upnregulated by both CrzA and ZipD 
+- uge4g ##UDP-glucose 4-epimerase gene
+- gelAg # 1,3-β-glucanosyltransferase with a role in elongation of 1,3-beta-glucan chains gene
+- chs5g ## 1,3-β-glucanosyltransferase with a role in elongation of 1,3-beta-glucan chains gene
+- pmc1g #PmcA gene which encodes for Pmc1 Ca2+ transporters 
+- cbpAg #gene encoding calcineurin binding protein 
+- NikA #histidine kinase (HOG) 
+- YpdA #histidine-containing phosphotransfer protein (HOG)
+- sskA #response regulator (HOG)
+- sskB #MAPKKK in HOG pahway 
+- pbsB #MAPKK in HOG pathway
+- sakA #MAPK in HOG pathway
+- MpkC
+- PKA
+- agsAg #enzyme involved in the biosynthesis of alpha-1,3-glucan
+- agsCg #enzyme involved in the synthesis of alpha-glucan
+- chsAg # Chitin Synthase A
+- chsCg # Chitin synthase C 
+- CreA #TF regulated by PKA
+- gsyA #glycogen synthase gene
+- gbdA # glycogen debranching enzyme gene 
+- tpsB # trehalose-6-phosphate synthase
+- srb1 #GDP-mannose pyrophosphorylase (cell wall biosynthesis) 
+- erg13
+- agm1
+- cyp5
+- cyp51B
+- gel4
+update rules: 
+  WSCs: WSCs
+  Bem2: Sac7
+  Sac7: Bem2 
+  Rom2: MidA or (MidA and WSCs) #  mainly MidA under oxidative stress, heat shock, cell wall damage
+  Rho1: Rom2 or fks1 and not Bem2 and not Sac7
+  PkcA: Rho1 and not MpkA
+  Bck1: PkcA
+  fks1: MpkC or RlmA and (not crzA or not zipD) 
+  Mkk2: Bck1
+  MpkA: Mkk2 or (sakA and MpkC) and not ZipD
+  RlmA: MpkA
+  MidA: MidA
+  cchA: MidA and not calcineurin #The calcium channel CchA is negatively regulated by calcineurin
+  calmodulin: cchA and MidA
+  calcineurin: calmodulin
+  zipD: calcineurin 
+  crzA: calcineurin or sakA
+  pmc1g: crzA    
+  cmdAg: crzA or zipD  
+  cbpAg: zipD  
+  shoAg: not crzA or not zipD 
+  uge4g: not crzA or not zipD 
+  gelAg: not crzA or not zipD 
+  chs5g: not crzA or not zipD
+  NikA: NikA
+  YpdA: NikA 
+  sskA: YpdA and (not crzA or not zipD)
+  sskB: sskA or crzA
+  pbsB: sskB and not crzA 
+  sakA: (pbsB and crzA) and not zipD ## delta crzA mutant has 72% less sakA phosphorylation when under osmotic stress (for 20mins) 
+  MpkC: pbsB  
+  PKA: sakA
+  CreA: PKA
+  agsAg: RlmA
+  agsCg: RlmA
+  chsAg: RlmA
+  chsCg: RlmA
+  A: CreA
+  gbdA: CreA
+  tpsB: MpkC
+  erg13: sakA
+  agm1: sakA
+  cyp5: sakA
+  cyp51B: sakA
+  gel4:  RlmA or sakA 
+  srb1: MpkC
+initial state:
+  WSCs: any
+  NikA: any
+  MidA: any
+  cchA: 0
+  cmdAg: 1
+  shoAg: 1
+  uge4g: 1
+  gelAg: 1
+  chs5g: 1 
+  pmc1g: 1
+  cbpAg: 1
+  fks1: 0
+  YpdA: 0
+  Rom2: 0
+  Rho1: 0
+  PkcA: 0
+  Bck1: 0
+  Mkk2: 0
+  MpkA: 0
+  RlmA: 0
+  Bem2: 0
+  Sac7: 0
+  calmodulin: 0
+  calcineurin: 0
+  crzA: 0
+  zipD: 0
+  sakA: 0 
+  sskB: 0
+  sskA: 0
+  pbsB: 0
+  MpkC: 0 
+  PKA: 0 
+  agsAg: 0
+  agsCg: 0  
+  chsAg: 0
+  chsCg: 0
+  CreA: 0 
+  gsyA: 0
+  gbdA: 0
+  tpsB: 0
+  erg13: 0
+  agm1: 0
+  cyp5: 0
+  cyp51B: 0
+  srb1: 0
+  gel4: 0
+perturbations: 
+  RlmA:
+        1: 7 
+        0: 1-6, 8-20 
+
+
+  
+
+

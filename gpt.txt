@@ -129,7 +129,4 @@ initial state:
   srb1: 0
   glfA: 0 
   YpdA: 0
-perturbations:
-  sskB:
-        1: 1-3 
-        0: 4-20 
+

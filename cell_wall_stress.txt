@@ -143,10 +143,7 @@ initial state:
   cyp51B: 0
   srb1: 0
   gel4: 0
-perturbations: 
-  RlmA:
-        1: 1-7 
-        0: 8-20 
+
 
 
   

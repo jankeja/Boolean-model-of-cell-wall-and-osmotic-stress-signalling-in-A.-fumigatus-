@@ -1,0 +1,134 @@
+## OSMOTIC STRESS
+nodes:
+  - MpkA # MAPK in CWI patwhay 
+  - RlmA
+  - Bem2
+  - Sac7
+  - MidA
+  - cchA
+  - shoAg
+  - fks1 # 1,3-β-glucan synthase catalytic subunit 
+  - calmodulin
+  - calcineurin
+  - sitA # ZipD dephosphpatase which activates ZipD
+  - crzA
+  - zipD
+  - cmdAg # gene encoding calmodulin is upregulated by both CrzA and ZipD 
+  - uge4g # UDP-glucose 4-epimerase gene
+  - gelAg # 1,3-β-glucanosyltransferase with a role in elongation of 1,3-beta-glucan chains gene
+  - chs5g # 1,3-β-glucanosyltransferase with a role in elongation of 1,3-beta-glucan chains gene
+  - pmc1g # PmcA gene which encodes for Pmc1 Ca2+ transporters 
+  - cbpAg # gene encoding calcineurin binding protein 
+  - NikA # histidine kinase (HOG) 
+  - YpdA # histidine-containing phosphotransfer protein (HOG)
+  - sskA # response regulator (HOG)
+  - sskB # MAPKKK in HOG pathway 
+  - pbsB # MAPKK in HOG pathway
+  - sakA # MAPK in HOG pathway
+  - MpkC
+  - PKA
+  - agsAg # enzyme involved in the biosynthesis of alpha-1,3-glucan
+  - agsCg # enzyme involved in the synthesis of alpha-glucan
+  - gel4g # protein which has β(1-3)glucanosyltransferase activity
+  - chsAg # Chitin Synthase A
+  - chsCg # Chitin synthase C 
+  - AtfA # TFs activated downstream of HOG
+  - AtfB
+  - AtfC
+  - AtfD
+  - CreA # TF regulated by PKA
+  - gsyA # glycogen synthase gene
+  - gbdA # glycogen debranching enzyme gene 
+  - tpsB # trehalose-6-phosphate synthase
+  - srb1 # GDP-mannose pyrophosphorylase (cell wall biosynthesis) 
+  - glfA # UDP-galactopyranose mutase
+update rules: 
+  Bem2: Sac7
+  Sac7: Bem2 
+  fks1: MpkC or RlmA and (not crzA or not zipD) 
+  MpkA: sakA and MpkC and not zipD
+  RlmA: MpkA
+  MidA: MidA
+  cchA: MidA and not calcineurin # The calcium channel CchA is negatively regulated by calcineurin
+  calmodulin: cchA and MidA 
+  calcineurin: calmodulin
+  sitA: calcineurin
+  zipD: sitA
+  crzA: calcineurin and sakA
+  pmc1g: crzA    
+  cmdAg: crzA or zipD  
+  cbpAg: zipD  
+  shoAg: not crzA or not zipD 
+  uge4g: not crzA or not zipD 
+  gelAg: not crzA or not zipD 
+  chs5g: not crzA or not zipD
+  NikA: NikA
+  YpdA: NikA 
+  sskA: YpdA and (not crzA or not zipD)
+  sskB: sskA or crzA 
+  pbsB: sskB and not crzA
+  sakA: pbsB and not zipD
+  MpkC: pbsB
+  PKA: sakA
+  CreA: PKA
+  agsAg: RlmA
+  agsCg: RlmA
+  gel4g: RlmA
+  chsAg: RlmA
+  chsCg: RlmA
+  AtfA: sakA
+  AtfB: sakA
+  AtfC: sakA
+  AtfD: sakA
+  gsyA: CreA
+  gbdA: CreA
+  tpsB: sakA
+  srb1: sakA and not zipD
+  glfA: sakA
+initial state:
+  NikA: any
+  MidA: any
+  cchA: 0
+  cmdAg: 1
+  shoAg: 1
+  uge4g: 1
+  gelAg: 1
+  chs5g: 1 
+  pmc1g: 1
+  cbpAg: 1 
+  fks1: 1
+  MpkA: 0
+  RlmA: 0
+  Bem2: 0
+  Sac7: 0
+  calmodulin: 0
+  calcineurin: 0
+  sitA: 0
+  crzA: 0
+  zipD: 0
+  sakA: 0 
+  sskB: 0
+  sskA: 0
+  pbsB: 0
+  MpkC: 0 
+  PKA: 0 
+  agsAg: 0
+  agsCg: 0 
+  gel4g: 0 
+  chsAg: 0
+  chsCg: 0
+  AtfA: 0
+  AtfB: 0
+  AtfC: 0
+  AtfD: 0
+  CreA: 0 
+  gsyA: 0
+  gbdA: 0
+  tpsB: 0
+  srb1: 0
+  glfA: 0 
+  YpdA: 0
+perturbations:
+  sskB:
+        1: 1-3 
+        0: 4-20 

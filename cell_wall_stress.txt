@@ -1,38 +1,38 @@
 ##CELL wall stress
 nodes:
 - WSCs #WSC1 and WSC3 receptors
-- Rom2 #GEF for Rho1 (CWI)
-- Rho1 #GTPase (CWI)
-- PkcA
+- Rom2 #GEF for Rho1 
+- Rho1 #GTPase in the CWI pathway
+- PkcA #Protein kinase C 
 - Bck1 #MAPKKK in CWI pathway 
 - Mkk2 #MAPKK in CWI pathway
 - MpkA #MAPK in CWI patwhay 
-- RlmA
-- Bem2
-- Sac7
-- MidA
-- cchA
-- shoAg
+- RlmA #Transcription factor, operating downstream of CWI signalling 
+- Bem2 #Rho1 GTPase activating protein (GAP)
+- Sac7 #Rho1 Guanine exchange factor (GEF)
+- MidA #Cell surface stress sensor and a Ca2+ channel
+- cchA #Calcium channel 
+- shoAg #Gene of ShoA osmotic stress sensor (alternaive sensor, function is not well described in A. fumigatus)
 - fks1 #1,3-β-glucan synthase catalytic subunit 
-- calmodulin
-- calcineurin
-- sitA
-- crzA
-- zipD
+- calmodulin #Calcium-binding signalling protein
+- calcineurin #Calcium and calmodulin dependent protein phosphatase
+- sitA #Protein phosphatase which activates ZipD TF
+- crzA #Transcription factor activated downstream of calcium-dependent signalling
+- zipD #Transcription factor activated downstream of calcium-dependent signalling
 - cmdAg # gene encoding calmodulin is upnregulated by both CrzA and ZipD 
 - uge4g ##UDP-glucose 4-epimerase gene
 - gelAg # 1,3-β-glucanosyltransferase with a role in elongation of 1,3-beta-glucan chains gene
 - chs5g ## 1,3-β-glucanosyltransferase with a role in elongation of 1,3-beta-glucan chains gene
 - pmc1g #PmcA gene which encodes for Pmc1 Ca2+ transporters 
 - cbpAg #gene encoding calcineurin binding protein 
-- NikA #histidine kinase (HOG) 
-- YpdA #histidine-containing phosphotransfer protein (HOG)
-- sskA #response regulator (HOG)
+- NikA #histidine kinase (HOG pathway) 
+- YpdA #histidine-containing phosphotransfer protein (HOG pathway)
+- sskA #response regulator (HOG pathway)
 - sskB #MAPKKK in HOG pahway 
 - pbsB #MAPKK in HOG pathway
 - sakA #MAPK in HOG pathway
-- MpkC
-- PKA
+- MpkC #MAP kinase activated downstream of HOG signalling 
+- PKA #Protein kinase A 
 - agsAg #enzyme involved in the biosynthesis of alpha-1,3-glucan
 - agsCg #enzyme involved in the synthesis of alpha-glucan
 - chsAg # Chitin Synthase A
@@ -42,11 +42,11 @@ nodes:
 - gbdA # glycogen debranching enzyme gene 
 - tpsB # trehalose-6-phosphate synthase
 - srb1 #GDP-mannose pyrophosphorylase (cell wall biosynthesis) 
-- erg13
-- agm1
-- cyp5
-- cyp51B
-- gel4
+- erg13 #enzyme involved in ergosterol biosynthesis for the cell wall
+- agm1 #enzyme involved in chitin biosynthesis for the cell wall
+- cyp5 #enzyme involved in ergosterol biosynthesis for the cell wall
+- cyp51B #enzyme involved in ergosterol biosynthesis for the cell wall
+- gel4 #enzyme with the role in beta(1,3)glucan production for the cell wall
 update rules: 
   WSCs: WSCs
   Bem2: Sac7

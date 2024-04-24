@@ -1,19 +1,19 @@
 
 ## OSMOTIC STRESS
 nodes:
-  - MpkA # MAPK in CWI patwhay 
-  - RlmA
-  - Bem2
-  - Sac7
-  - MidA
-  - cchA
-  - shoAg
-  - fks1 # 1,3-β-glucan synthase catalytic subunit 
-  - calmodulin
-  - calcineurin
+  - MpkA #MAPK in the CWI patwhay 
+  - RlmA #Transcription factor, operating downstream of CWI signalling
+  - Bem2 #Rho1 GTPase activating protein (GAP)
+  - Sac7 #Rho1 Guanine exchange factor (GEF)
+  - MidA #Cell surface stress sensor and a Ca2+ channel
+  - cchA #Calcium channel
+  - shoAg #Gene of ShoA osmotic stress sensor (alternaive sensor, function is not well described in A. fumigatus)
+  - fks1 #1,3-β-glucan synthase catalytic subunit 
+  - calmodulin #Calcium-binding signalling protein
+  - calcineurin #Calcium and calmodulin dependent protein phosphatase
   - sitA # ZipD dephosphpatase which activates ZipD
-  - crzA
-  - zipD
+  - crzA #Transcription factor activated downstream of calcium-dependent signalling
+  - zipD #Transcription factor activated downstream of calcium-dependent signalling
   - cmdAg # gene encoding calmodulin is upregulated by both CrzA and ZipD 
   - uge4g # UDP-glucose 4-epimerase gene
   - gelAg # 1,3-β-glucanosyltransferase with a role in elongation of 1,3-beta-glucan chains gene
@@ -26,8 +26,8 @@ nodes:
   - sskB # MAPKKK in HOG pathway 
   - pbsB # MAPKK in HOG pathway
   - sakA # MAPK in HOG pathway
-  - MpkC
-  - PKA
+  - MpkC #MAP kinase activated downstream of HOG signalling
+  - PKA  #Protein kinase A 
   - agsAg # enzyme involved in the biosynthesis of alpha-1,3-glucan
   - agsCg # enzyme involved in the synthesis of alpha-glucan
   - gel4g # protein which has β(1-3)glucanosyltransferase activity

@@ -16,7 +16,7 @@ nodes:
 - fks1 #1,3-β-glucan synthase catalytic subunit 
 - calmodulin #Calcium-binding signalling protein
 - calcineurin #Calcium and calmodulin dependent protein phosphatase
-- sitA #Protein phosphatase which activates ZipD TF
+- sitA #Protein dephosphatase which activates ZipD TF
 - crzA #Transcription factor activated downstream of calcium-dependent signalling
 - zipD #Transcription factor activated downstream of calcium-dependent signalling
 - cmdAg # gene encoding calmodulin is upnregulated by both CrzA and ZipD 
